@@ -2,7 +2,7 @@ import typography, { weight } from "../../theme/typography.styles";
 import styled from "styled-components";
 
 export const Container = styled.div`
-    ${typography.p};
+    ${typography.p.default};
 
     svg {
         color: var(--color-text);

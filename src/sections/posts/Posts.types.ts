@@ -11,7 +11,6 @@ export type PostTypes = {
 export type AssemblyTypes = Omit<PostTypes, 'thumbnail'>
 
 export type PropTypes = {
-    block: string,
     attributes: {
         title: string,
         posts: PostTypes[],

@@ -8,8 +8,16 @@ import Header from "./sections/header/Header";
 import Footer from "./sections/footer/Footer";
 import Page from "./pages/Page/Page";
 import Home from "./pages/Home/Home";
+import { optionsStore } from "./state/stores/options";
+import { useEffect } from "react";
 
 const App: React.FC = () => {
+  const {getOptions} = optionsStore;
+
+  useEffect(() => {
+    getOptions();
+  }, [])
+
   return (
     <>
       <Global styles={GlobalStyles} />

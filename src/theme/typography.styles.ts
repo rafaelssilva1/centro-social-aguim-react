@@ -35,14 +35,28 @@ const typography = {
     ${sharedStyles}
     font-size: 2rem;
   `,
-	p: css`
-    font-family: ${ fontQuicksand }, 'Times New Roman', Times, serif;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    color: var( --color-text );
-  `,
+	p: {
+    default: css`
+      font-family: ${ fontQuicksand }, Arial, Helvetica, sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      color: var( --color-text );
+    `,
+    medium: css`
+      font-family: ${ fontQuicksand }, Arial, Helvetica, sans-serif;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: var( --color-text );
+    `,
+    small: css`
+      font-family: ${ fontQuicksand }, Arial, Helvetica, sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: var( --color-text );
+    `
+  },
   a: css`
-    font-family: ${ fontQuicksand }, 'Times New Roman', Times, serif;
+    font-family: ${ fontQuicksand }, Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
     line-height: 2.2rem;
     color: var( --color-text );

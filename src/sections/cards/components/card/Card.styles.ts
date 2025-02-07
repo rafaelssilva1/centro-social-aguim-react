@@ -4,8 +4,6 @@ import ImageComponent from '../../../../components/image/Image';
 import Link from '../../../../components/link/Link';
 
 export const Container = styled(Link)`
-	max-width: 37.7rem;
-
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-32);
@@ -32,7 +30,7 @@ export const Image = styled(ImageComponent)`
 	border-top-left-radius: var(--spacing-32);
 	border-top-right-radius: var(--spacing-32);
 
-	height: 37.8rem;
+	height: 30rem;
 `;
 
 export const Overlay = styled.span`
@@ -44,7 +42,7 @@ export const Overlay = styled.span`
 		rgba( 0, 0, 0, 0.6 ) 87%
 	);
 
-	height: 37.8rem;
+	height: 30rem;
 
 	z-index: var(--index-below);
 `;

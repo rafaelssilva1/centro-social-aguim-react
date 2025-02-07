@@ -11,3 +11,8 @@ export type DateType = {
     parsedDate: string,
     datetime: string
 }
+
+export enum AllowedMenus {
+    Footer = 'footer',
+    Header = 'header'
+}

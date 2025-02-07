@@ -1,8 +1,8 @@
 import { BaseText } from "./Text.styles";
-import { PropTypes } from "./Text.types";
+import { PropTypes, TextTypes } from "./Text.types";
 
-const Text: React.FC<PropTypes> = ({children, isDarkMode, ...props}) => {
-    return <BaseText isDarkMode={isDarkMode} {...props}>{children}</BaseText>
+const Text: React.FC<PropTypes> = ({children, type = TextTypes.Default, ...props}) => {
+    return <BaseText type={type} {...props}>{children}</BaseText>
 };
 
 export default Text;

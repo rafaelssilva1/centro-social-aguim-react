@@ -1,5 +1,4 @@
 export type PropTypes = {
-    block: string,
     attributes: {
         title?: string,
         image: {

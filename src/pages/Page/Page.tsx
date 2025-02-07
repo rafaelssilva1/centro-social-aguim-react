@@ -28,7 +28,7 @@ const Page: React.FC<PropTypes> = observer(({id}) => {
     return (
         <>
             {currentPage?.data.map((block, index) => {
-                const Component = (componentMap as any)[block.block];
+                const Component = componentMap[block.block];
 
                 return Component ? <Component key={index} attributes={block.attributes} /> : null;
             })}

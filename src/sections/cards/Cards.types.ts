@@ -8,7 +8,6 @@ export type CardPropTypes = {
 }
 
 export type PropTypes = {
-    block: string,
     attributes: {
         title: string,
         data: CardPropTypes[]

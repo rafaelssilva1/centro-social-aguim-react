@@ -21,15 +21,15 @@ const App: React.FC = () => {
   return (
     <>
       <Global styles={GlobalStyles} />
-      <Header />
       <BrowserRouter>
+      <Header />
         <Routes>
           <Route path='*' element={<NotFound />} />
           <Route index path='/' element={<Home />} />
           <Route path=":parent?/:id" element={<Page />} />
         </Routes>
-      </BrowserRouter>
       <Footer />
+      </BrowserRouter>
     </>
   );
 }

@@ -2,7 +2,7 @@ import ExternalIcon from "../icons/ExternalIcon";
 import { BaseLink } from "./ExternalLink.styles";
 import { PropTypes } from "./ExternalLink.types";
 
-const ExternalLink: React.FC<PropTypes> = ({href, children, target = '_blank', ...props}) => {
+const ExternalLink: React.FC<PropTypes> = ({href, children, showIcon = true, target = '_blank', ...props}) => {
     if(!href) {
         return null;
     }
@@ -10,7 +10,7 @@ const ExternalLink: React.FC<PropTypes> = ({href, children, target = '_blank', .
     return (
         <BaseLink href={href} target={target} {...props}>
             <span>{children}</span>
-            <ExternalIcon />
+            {showIcon ? <ExternalIcon /> : null}
         </BaseLink>
     )
 };

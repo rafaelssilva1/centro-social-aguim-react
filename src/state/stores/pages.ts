@@ -5,6 +5,7 @@ import { PageModel } from "../models/pages";
 
 const PagesStore = t
     .model('PagesStore', {
+        homepageId: t.string,
         pages: t.array(PageModel),
     })
     .actions(self => ({
@@ -24,7 +25,24 @@ const PagesStore = t
                     console.error(e.toUpperCase());
                 }
             };
-        })
+        }),
+        getHomePage: flow(function* () {
+            try {
+                const homepageIsKnown = !!self.homepageId;
+
+                if (homepageIsKnown) return;
+
+                const { data } = yield axios.get(
+                    `${import.meta.env.VITE_REQUEST_URL}/homepage`
+                );
+
+                self.homepageId = data.id;
+            } catch (e) {
+                if (typeof e === "string") {
+                    console.error(e.toUpperCase());
+                }
+            };
+        }),
     }))
 
-export const pagesStore = PagesStore.create({pages: []})
+export const pagesStore = PagesStore.create({pages: [], homepageId: ''})

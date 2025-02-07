@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+
 import styled, { css } from 'styled-components';
 import typography from '../../theme/typography.styles';
 
-export const BaseLink = styled( 'a' ).withConfig( {
+export const BaseLink = styled(Link).withConfig( {
 	shouldForwardProp: ( prop ) => ! [ 'showAsButton' ].includes( prop ),
 } )<{showAsButton?: boolean}>`
 	${ typography.a };

@@ -1,29 +1,23 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
+import { observer } from "mobx-react";
+
 import Page from "../Page/Page"
-import axios from "axios";
-import { HomePropTypes } from "./Home.types";
+import Loading from "../../components/loading/Loading";
 
-const Home: React.FC = () => {
-    const [homeId, setHomeId] = useState('');
+import { pagesStore } from "../../state/stores/pages";
 
-    const getHomePageId = useCallback(
-      async () => {
-        const { data } = await axios.get(
-            `${import.meta.env.VITE_REQUEST_URL}/homepage`
-        ) as HomePropTypes;
+const Home: React.FC = observer(() => {
+  const {homepageId, getHomePage} = pagesStore;
 
-        setHomeId(data.id);
-      },
-      [],
-    )
-    
-    useEffect(() => {
-        getHomePageId();
-    }, [])
+  useEffect(() => {
+    getHomePage();
+  }, [])
 
-    return (
-        <Page id={homeId} />
-    )
-}
+  if(!homepageId) return <Loading />
+
+  return (
+      <Page id={String(homepageId)} />
+  )
+})
 
 export default Home;

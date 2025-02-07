@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import typography from "../../theme/typography.styles";
 import { StylingProps } from "./Heading.types";
 

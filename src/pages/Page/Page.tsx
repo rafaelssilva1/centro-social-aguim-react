@@ -23,6 +23,9 @@ const Page: React.FC<PropTypes> = observer(({id}) => {
 
     const currentPage = pages.find(page => page.id === parsedId);
 
+    console.log(pages);
+    
+
     if(!currentPage) return <Loading />;
 
     return (

@@ -14,6 +14,7 @@ import { Address, Container, InnerContainer, Link, NavContainer, SocialMedia, Te
 import { AllowedMenus } from "../../utils/types";
 import { TextTypes } from "../../components/text/Text.types";
 import BackToTop from "../../components/back-to-top/BackToTop";
+import ExternalLink from "../../components/external-link/ExternalLink";
 
 const Footer: React.FC = observer(() => {
     const {menus, getMenu} = menusStore;
@@ -56,23 +57,23 @@ const Footer: React.FC = observer(() => {
                         )
                     })}
                 </NavContainer>
-                <Link href={'https://www.livroreclamacoes.pt/Inicio/'} target="_blank">
-                    <Image src="/images/complaint_book.png" alt="Livro de reclamações" width={102} height={43} />
-                </Link>
+                <ExternalLink showIcon={false} href={'https://www.livroreclamacoes.pt/Inicio/'} target="_blank">
+                    <Image src="/images/complaint_book.png" alt="Livro de reclamações" width={110} height={43} />
+                </ExternalLink>
             </InnerContainer>
             <InnerContainer>
-                <Link href={options.facebook} target="_blank">
+                <ExternalLink showIcon={false} href={options.facebook} target="_blank">
                     <SocialMedia type={TextTypes.Small}>
                         <Facebook />
                         <span>Facebook</span>
                     </SocialMedia>
-                </Link>
-                <Link href={options.instagram} target="_blank">
+                </ExternalLink>
+                <ExternalLink showIcon={false} href={options.instagram} target="_blank">
                     <SocialMedia type={TextTypes.Small}>
                         <Instagram />
                         <span>Instagram</span>
                     </SocialMedia>
-                </Link>
+                </ExternalLink>
             </InnerContainer>
             <BackToTop />
         </Container>

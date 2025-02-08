@@ -28,7 +28,7 @@ const Footer: React.FC = observer(() => {
 
     return (
         <Container>
-            <Logo />
+            <Logo color="white" />
             <InnerContainer>
                 <Address type={TextTypes.Medium}>{options.address}</Address>
                 <span>

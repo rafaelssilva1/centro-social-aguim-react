@@ -12,7 +12,7 @@ export const Container = styled.section`
 
 	padding: var(--spacing-32);
 
-	min-height: 30rem;
+	min-height: 24rem;
 
 	background-color: var(--color-primary);
 

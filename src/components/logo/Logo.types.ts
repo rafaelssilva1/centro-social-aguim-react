@@ -1,3 +1,3 @@
 export type PropTypes = {
-    content: string
+    color?: string
 }

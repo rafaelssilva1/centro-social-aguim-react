@@ -1,5 +1,7 @@
+import Heading from "../../components/heading/Heading";
 import ImageComponent from "../../components/image/Image";
-import { Container, Heading } from "./Image.styles";
+
+import { Container } from "./Image.styles";
 
 import { PropTypes } from "./Image.types";
 
@@ -8,7 +10,7 @@ const Image: React.FC<PropTypes> = ( { attributes, ...props } ) => {
 	const { url, alt, width, height} = image;
 
 	return (
-		<Container {...props}>
+		<Container hasTitle={!!title} {...props}>
 			{title ? <Heading level="2">{ title }</Heading> : null}
 			<ImageComponent src={url} alt={alt} height={height} width={width} style={ { objectFit: imageFit } } />
 		</Container>

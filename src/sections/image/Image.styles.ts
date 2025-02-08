@@ -1,8 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-import HeadingComponent from "../../components/heading/Heading";
+import Image from "../../components/image/Image";
 
-export const Container = styled.section`
+export const Container = styled('section').withConfig({ 
+	shouldForwardProp: (prop) =>  
+	  !['hasTitle'].includes(prop)
+	})<{hasTitle: boolean}>`
 	width: 100%;
 	height: 53.1rem;
 
@@ -11,9 +14,19 @@ export const Container = styled.section`
 	gap: var(--spacing-16);
 
 	padding-bottom: var(--spacing-32);
+
+	height: auto;
+	max-height: 45rem;
+
+	${({ hasTitle }) =>
+		hasTitle && css`
+			padding: var(--spacing-32);
+			max-height: unset;
+	`}
 `;
 
-export const Heading = styled(HeadingComponent)`
-	padding-inline: var(--spacing-32);
-	padding-top: var(--spacing-32);
+export const ImageComponent = styled(Image).withConfig({ 
+	shouldForwardProp: (prop) =>  
+	  !['level'].includes(prop)
+	})<{hasTitle: boolean}>`
 `;

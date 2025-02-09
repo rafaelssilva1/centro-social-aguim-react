@@ -27,6 +27,8 @@ import { PropTypes as HierarchyPropTypes } from "../../sections/hierarchy/Hierar
 import { PropTypes as FilesPropTypes } from "../../sections/files/Files.types";
 import { PropTypes as BudgetsPropTypes } from "../../sections/budgets/Budgets.types";
 import { PropTypes as GalleryPropTypes } from "../../sections/gallery/Gallery.types";
+import { PropTypes as SignUpFormsPropTypes } from "../../sections/sign-up-forms/SignUpForms.types";
+import SignUpForms from "../../sections/sign-up-forms/SignUpForms";
 
 export type PropTypes =
     HeroPropTypes |
@@ -41,7 +43,8 @@ export type PropTypes =
     HierarchyPropTypes |
     FilesPropTypes |
     BudgetsPropTypes |
-    GalleryPropTypes;
+    GalleryPropTypes |
+    SignUpFormsPropTypes;
 
 export const componentMap: Record<string, ComponentType<PropTypes>> = {
     hero: Hero as ComponentType<PropTypes>,
@@ -57,4 +60,5 @@ export const componentMap: Record<string, ComponentType<PropTypes>> = {
     files: Files as ComponentType<PropTypes>,
     budgets: Budgets as ComponentType<PropTypes>,
     gallery: Gallery as ComponentType<PropTypes>,
+    'sign-up-forms': SignUpForms as ComponentType<PropTypes>,
 };

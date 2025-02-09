@@ -4,12 +4,12 @@ import Download from '../../../../components/icons/Download';
 import { IconPosition } from '../../../../components/link/Link.types';
 import SanitizeHTMLContainer from '../../../../components/sanitize-html-container/SanitizeHTMLContainer';
 
-import { Container, Image, Link } from './FilesCard.styles';
+import { Button, Container, Image, Link } from './FilesCard.styles';
 
 import { PropTypes } from './FilesCard.types';
 
 const FilesCard: React.FC<PropTypes> = ( { item, ...props } ) => {
-	const { title, description, preview, file } = item;
+	const { title, description, preview, file, form } = item;
 
 	return (
 		<Container { ...props }>
@@ -20,15 +20,18 @@ const FilesCard: React.FC<PropTypes> = ( { item, ...props } ) => {
 					<SanitizeHTMLContainer content={ description } columns='1' />
 				) : null }
 			</Container>
-			<Link
+			{file ? <Link
 				href={ file ? file.url : '' }
 				target="_blank"
 				showAsButton
 				icon={ <Download /> }
 				iconPosition={IconPosition.Left}
 			>
-				{ file ? 'Download' : 'Inscrever' }
-			</Link>
+				Download
+			</Link> : null}
+			{form ? <Button>
+				Inscrever
+			</Button> : null}
 		</Container>
 	);
 };

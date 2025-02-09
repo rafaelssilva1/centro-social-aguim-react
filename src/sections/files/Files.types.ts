@@ -2,10 +2,14 @@ import { MediaType } from "../../utils/types";
 
 export type FileType = {
     title: string,
-    description: string,
-    file: {
+    description?: string,
+    file?: {
         url: string,
     },
+    form?: {
+        value: string,
+        label: string,
+    }
     preview: MediaType
 }
 

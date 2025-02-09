@@ -55,7 +55,7 @@ const Budgets: React.FC<PropTypes> = ( { attributes, ...props } ) => {
                             return (
                                 <Option 
                                     key={index}
-                                    onClick={(e) => {
+                                    onClick={() => {
                                         updateQueryParam(budget.title);
                                         setCurrentYear(index);
                                         closeSelect();

@@ -6,7 +6,7 @@ import { Heading } from '../hero/Hero.styles';
 import { Container, ServicesContainer } from './Cards.styles';
 import { PropTypes } from './Cards.types';
 
-// @ts-expect-error
+// @ts-expect-error ignore error
 import 'swiper/css';
 
 const Cards: React.FC<PropTypes> = ( { attributes, ...props } ) => {

@@ -29,8 +29,11 @@ const DesktopNavigation: React.FC<PropTypes> = ({headerMenu, headerRef, ...props
                     return (
                         <span
                             onMouseEnter={() => {
-                                children.length && setInnerNav(index)
-                                !children.length && setInnerNav(null)
+                                if(children.length) {
+                                    setInnerNav(index)
+                                } else {
+                                    setInnerNav(null)
+                                }
                             }}
                             key={index}
                         >

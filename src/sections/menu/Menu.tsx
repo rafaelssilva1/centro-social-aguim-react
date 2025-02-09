@@ -9,9 +9,9 @@ import ArrowSmall from "../../components/icons/ArrowSmall";
 
 import { Container, InnerContainer, MediaContainer, Image, ArrowContainer, Arrow, PreviousLink, PreviousContainer } from "./Menu.styles";
 
-// @ts-expect-error
+// @ts-expect-error ignore error
 import 'swiper/css';
-// @ts-expect-error
+// @ts-expect-error ignore error
 import 'swiper/css/navigation';
 
 import { PropTypes } from "./Menu.types";
@@ -65,7 +65,7 @@ const Menu: React.FC<PropTypes> = ({attributes, ...props}) => {
 				</ArrowContainer>
 			</InnerContainer>
             {
-                !!previous_menu.id ? 
+                previous_menu.id ? 
                 <PreviousContainer>
                     <PreviousLink
                         href={`/${previous_menu.slug}`}

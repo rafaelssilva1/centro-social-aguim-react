@@ -12,6 +12,7 @@ import TextImages from "../../sections/text-images/TextImages";
 import Hierarchy from "../../sections/hierarchy/Hierarchy";
 import Files from "../../sections/files/Files";
 import Budgets from "../../sections/budgets/Budgets";
+import Gallery from "../../sections/gallery/Gallery";
 
 import { PropTypes as HeroPropTypes } from "../../sections/hero/Hero.types";
 import { PropTypes as ImagePropTypes } from "../../sections/image/Image.types";
@@ -25,6 +26,7 @@ import { PropTypes as TextImagesPropTypes } from "../../sections/text-images/Tex
 import { PropTypes as HierarchyPropTypes } from "../../sections/hierarchy/Hierarchy.types";
 import { PropTypes as FilesPropTypes } from "../../sections/files/Files.types";
 import { PropTypes as BudgetsPropTypes } from "../../sections/budgets/Budgets.types";
+import { PropTypes as GalleryPropTypes } from "../../sections/gallery/Gallery.types";
 
 export type PropTypes =
     HeroPropTypes |
@@ -38,7 +40,8 @@ export type PropTypes =
     TextImagesPropTypes |
     HierarchyPropTypes |
     FilesPropTypes |
-    BudgetsPropTypes;
+    BudgetsPropTypes |
+    GalleryPropTypes;
 
 export const componentMap: Record<string, ComponentType<PropTypes>> = {
     hero: Hero as ComponentType<PropTypes>,
@@ -53,4 +56,5 @@ export const componentMap: Record<string, ComponentType<PropTypes>> = {
     hierarchy: Hierarchy as ComponentType<PropTypes>,
     files: Files as ComponentType<PropTypes>,
     budgets: Budgets as ComponentType<PropTypes>,
+    gallery: Gallery as ComponentType<PropTypes>,
 };

@@ -8,7 +8,7 @@ import { Container, InnerContainer } from './Hierarchy.styles';
 
 import { PropTypes } from './Hierarchy.types';
 
-// @ts-expect-error
+// @ts-expect-error ignore error
 import 'swiper/css';
 
 const Hierarchy: React.FC<PropTypes> = ( { attributes, ...props } ) => {

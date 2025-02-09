@@ -7,7 +7,7 @@ import { AssemblyTypes } from '../../Posts.types';
 import { IconPosition } from '../../../../components/link/Link.types';
 import Chrevon from '../../../../components/icons/Chrevon';
 
-const Assembly: React.FC<AssemblyTypes> = ( { title, excerpt, date: {parsedDate, datetime}, link, ...props } ) => {
+const Assembly: React.FC<AssemblyTypes> = ( { title, date: {parsedDate, datetime}, link, ...props } ) => {
 	return (
 		<Container {...props}>
 			<Time dateTime={ datetime }>{ parsedDate }</Time>

@@ -1,4 +1,4 @@
-const ArrowNav = ( { rotate, ...props }: {rotate: true} ) => {
+const ArrowNav = ( { ...props } ) => {
 	return (
 		<svg
 			width="82"

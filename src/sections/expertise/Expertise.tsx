@@ -6,9 +6,9 @@ import Card from "./components/Card";
 import { Heading, SanitizeHTMLContainer } from "../hero/Hero.styles";
 import { Container, ServicesContainer } from "./Expertise.styles";
 
-// @ts-expect-error
+// @ts-expect-error ignore error
 import 'swiper/css';
-// @ts-expect-error
+// @ts-expect-error ignore error
 import "swiper/css/autoplay";
 
 import { PropTypes } from "./Expertise.types";

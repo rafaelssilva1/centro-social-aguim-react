@@ -12,7 +12,7 @@ const MenusStore = t
             try {
                 const isRepeated = self.menus.find(el => el.menu === id);
 
-                if (!!isRepeated) return;
+                if (isRepeated) return;
 
                 const { data } = yield axios.get(
                     `${import.meta.env.VITE_REQUEST_URL}/menus/${id}`

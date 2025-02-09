@@ -13,7 +13,7 @@ const PagesStore = t
             try {
                 const isRepeated = self.pages.find(el => el.id === id);
 
-                if (!!isRepeated) return;
+                if (isRepeated) return;
 
                 const { data } = yield axios.get(
                     `${import.meta.env.VITE_REQUEST_URL}/content/${id}`

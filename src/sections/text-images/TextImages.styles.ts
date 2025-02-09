@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import * as media from '../../theme/custom-media';
 
 import ImageComponent from '../../components/image/Image';
 
@@ -9,6 +10,10 @@ export const Container = styled( 'section' ).withConfig( {
 	gap: var(--spacing-32);
 
 	padding: var(--spacing-32);
+
+	${media.extraSmallMedia} {
+		flex-direction: column;
+	}
 
 	${ ( { invert } ) =>
 		invert &&

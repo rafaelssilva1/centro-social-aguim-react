@@ -1,5 +1,8 @@
 import { AnchorHTMLAttributes } from "react";
+import { IconPosition } from "../link/Link.types";
 
 export type PropTypes = AnchorHTMLAttributes<HTMLAnchorElement> & {
-    showIcon?: boolean;
+    icon?: React.ReactNode,
+    iconPosition?: IconPosition,
+    showAsButton?: boolean;
 };

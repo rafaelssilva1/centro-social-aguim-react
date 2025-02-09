@@ -13,6 +13,9 @@ import Hierarchy from "../../sections/hierarchy/Hierarchy";
 import Files from "../../sections/files/Files";
 import Budgets from "../../sections/budgets/Budgets";
 import Gallery from "../../sections/gallery/Gallery";
+import SignUpForms from "../../sections/sign-up-forms/SignUpForms";
+import Columns from "../../components/columns/Columns";
+import ContactInformation from "../../sections/contact-information/ContactInformation";
 
 import { PropTypes as HeroPropTypes } from "../../sections/hero/Hero.types";
 import { PropTypes as ImagePropTypes } from "../../sections/image/Image.types";
@@ -28,9 +31,13 @@ import { PropTypes as FilesPropTypes } from "../../sections/files/Files.types";
 import { PropTypes as BudgetsPropTypes } from "../../sections/budgets/Budgets.types";
 import { PropTypes as GalleryPropTypes } from "../../sections/gallery/Gallery.types";
 import { PropTypes as SignUpFormsPropTypes } from "../../sections/sign-up-forms/SignUpForms.types";
-import SignUpForms from "../../sections/sign-up-forms/SignUpForms";
+import { PropTypes as ColumnsPropTypes } from "../../components/columns/Columns.types";
 
-export type PropTypes =
+export type BaseComponentProps = {
+    block?: string
+}
+
+export type ComponentsPropTypes = BaseComponentProps & (
     HeroPropTypes |
     ImagePropTypes |
     ExpertisePropTypes |
@@ -44,21 +51,25 @@ export type PropTypes =
     FilesPropTypes |
     BudgetsPropTypes |
     GalleryPropTypes |
-    SignUpFormsPropTypes;
+    SignUpFormsPropTypes |
+    ColumnsPropTypes
+)
 
-export const componentMap: Record<string, ComponentType<PropTypes>> = {
-    hero: Hero as ComponentType<PropTypes>,
-    image: Image as ComponentType<PropTypes>,
-    expertise: Expertise as ComponentType<PropTypes>,
-    cards: Cards as ComponentType<PropTypes>,
-    posts: Posts as ComponentType<PropTypes>,
-    menu: Menu as ComponentType<PropTypes>,
-    map: Map as ComponentType<PropTypes>,
-    content: Content as ComponentType<PropTypes>,
-    'text-images': TextImages as ComponentType<PropTypes>,
-    hierarchy: Hierarchy as ComponentType<PropTypes>,
-    files: Files as ComponentType<PropTypes>,
-    budgets: Budgets as ComponentType<PropTypes>,
-    gallery: Gallery as ComponentType<PropTypes>,
-    'sign-up-forms': SignUpForms as ComponentType<PropTypes>,
+export const componentMap: Record<string, ComponentType<ComponentsPropTypes>> = {
+    hero: Hero as ComponentType<ComponentsPropTypes>,
+    image: Image as ComponentType<ComponentsPropTypes>,
+    expertise: Expertise as ComponentType<ComponentsPropTypes>,
+    cards: Cards as ComponentType<ComponentsPropTypes>,
+    posts: Posts as ComponentType<ComponentsPropTypes>,
+    menu: Menu as ComponentType<ComponentsPropTypes>,
+    map: Map as ComponentType<ComponentsPropTypes>,
+    content: Content as ComponentType<ComponentsPropTypes>,
+    'text-images': TextImages as ComponentType<ComponentsPropTypes>,
+    hierarchy: Hierarchy as ComponentType<ComponentsPropTypes>,
+    files: Files as ComponentType<ComponentsPropTypes>,
+    budgets: Budgets as ComponentType<ComponentsPropTypes>,
+    gallery: Gallery as ComponentType<ComponentsPropTypes>,
+    'sign-up-forms': SignUpForms as ComponentType<ComponentsPropTypes>,
+    columns: Columns as ComponentType<ComponentsPropTypes>,
+    'contact-information': ContactInformation
 };

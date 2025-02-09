@@ -23,11 +23,13 @@ const Page: React.FC<PropTypes> = observer(({id}) => {
 
     const currentPage = pages.find(page => page.id === parsedId);
 
+    const contentToShow = currentPage?.data;
+
     if(!currentPage) return <Loading />;
 
     return (
         <>
-            {currentPage?.data.map((block, index) => {
+            {contentToShow?.map((block, index) => {
                 const Component = componentMap[block.block];
 
                 return Component ? <Component key={index} attributes={block.attributes} /> : null;

@@ -9,6 +9,6 @@ export const BaseHeading =  styled('h1').withConfig({
         ${({ level }) => level === "1" && typography.h1}
         ${({ level }) => level === "2" && typography.h2}
         ${({ level }) => level === "3" && typography.h3}
-        ${({ level }) => level === "4" && typography.p.default}
+        ${({ level }) => level === "4" && typography.h4}
         ${({ level }) => level === "5" && typography.p.default}
 `;

@@ -11,7 +11,7 @@ const Logo: React.FC<PropTypes> = observer(({color = 'text', ...props}) => {
 
     return (
         <Link href="/">
-            <SanitizeHTMLContainer color={color} content={options.logo} {...props} />
+            <SanitizeHTMLContainer color={color} content={options.logo} columns='1' {...props} />
         </Link>
     )
 })

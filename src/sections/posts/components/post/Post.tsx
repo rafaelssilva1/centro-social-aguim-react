@@ -14,7 +14,7 @@ const Post: React.FC<PropTypes> = ( { title, excerpt, thumbnail: {url, alt, widt
 			<InnerContainer>
 				<Time dateTime={ datetime }>{ parsedDate }</Time>
 				<Heading level="3">{ title }</Heading>
-				<SanitizeHTMLContainer content={ excerpt } />
+				<SanitizeHTMLContainer content={ excerpt } columns='1' />
 				<Link href={link} showAsButton={!!isFirst} icon={!isFirst && <Chrevon />} iconPosition={!isFirst ? IconPosition.Right : undefined}>Saiba mais</Link>
 			</InnerContainer>
 		</Container>

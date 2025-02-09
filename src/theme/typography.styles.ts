@@ -35,6 +35,10 @@ const typography = {
     ${sharedStyles}
     font-size: 2rem;
   `,
+  h4: css`
+    ${sharedStyles}
+    font-size: 2rem;
+  `,
 	p: {
     default: css`
       font-family: ${ fontQuicksand }, Arial, Helvetica, sans-serif;

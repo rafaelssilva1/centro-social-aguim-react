@@ -19,7 +19,7 @@ const Expertise: React.FC<PropTypes> = ({attributes, ...props}) => {
     return (
 		<Container {...props}>
 			<Heading level="2">{ title }</Heading>
-			<SanitizeHTMLContainer content={ description } />
+			<SanitizeHTMLContainer content={ description } columns="1" />
 			<ServicesContainer>
 				<Swiper
                     slidesPerView={'auto'}

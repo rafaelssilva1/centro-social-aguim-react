@@ -8,7 +8,7 @@ const Hero: React.FC<PropTypes> = ({attributes, ...props}) => {
     return (
         <Container {...props}>
             <Heading level="1">{title}</Heading>
-            {description ? <SanitizeHTMLContainer content={description} renderAsParagraph /> : null}
+            {description ? <SanitizeHTMLContainer content={description} renderAsParagraph columns="1" /> : null}
         </Container>
     )
 }

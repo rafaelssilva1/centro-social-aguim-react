@@ -9,7 +9,7 @@ const Map: React.FC<PropTypes> = ( { attributes, ...props } ) => {
 
 	return (
 		<Container {...props}>
-			<SanitizeHTMLContainer content={ map } />
+			<SanitizeHTMLContainer content={ map } columns='1' />
 		</Container>
 	);
 };

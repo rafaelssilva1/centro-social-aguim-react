@@ -14,6 +14,8 @@ export const Button = styled(ButtonComponent)`
     top: calc(var(--spacing-24) * -1);
     right: var(--spacing-16);
 
+    box-shadow: 0 0 0.1rem 0.1rem var(--color-primary);
+
     svg {
         position: absolute;
         top: 50%;

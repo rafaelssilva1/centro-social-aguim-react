@@ -57,18 +57,18 @@ const Footer: React.FC = observer(() => {
                         )
                     })}
                 </NavContainer>
-                <ExternalLink showIcon={false} href={'https://www.livroreclamacoes.pt/Inicio/'} target="_blank">
+                <ExternalLink href={'https://www.livroreclamacoes.pt/Inicio/'} target="_blank">
                     <Image src="/images/complaint_book.png" alt="Livro de reclamações" width={110} height={43} />
                 </ExternalLink>
             </InnerContainer>
             <InnerContainer>
-                <ExternalLink showIcon={false} href={options.facebook} target="_blank">
+                <ExternalLink href={options.facebook} target="_blank">
                     <SocialMedia type={TextTypes.Small}>
                         <Facebook />
                         <span>Facebook</span>
                     </SocialMedia>
                 </ExternalLink>
-                <ExternalLink showIcon={false} href={options.instagram} target="_blank">
+                <ExternalLink href={options.instagram} target="_blank">
                     <SocialMedia type={TextTypes.Small}>
                         <Instagram />
                         <span>Instagram</span>

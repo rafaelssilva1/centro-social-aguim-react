@@ -10,7 +10,8 @@ import Map from "../../sections/map/Map";
 import Content from "../../sections/content/Content";
 import TextImages from "../../sections/text-images/TextImages";
 import Hierarchy from "../../sections/hierarchy/Hierarchy";
-import FilesCard from "../../sections/files/Files";
+import Files from "../../sections/files/Files";
+import Budgets from "../../sections/budgets/Budgets";
 
 import { PropTypes as HeroPropTypes } from "../../sections/hero/Hero.types";
 import { PropTypes as ImagePropTypes } from "../../sections/image/Image.types";
@@ -23,6 +24,7 @@ import { PropTypes as ContentPropTypes } from "../../sections/content/Content.ty
 import { PropTypes as TextImagesPropTypes } from "../../sections/text-images/TextImages.types";
 import { PropTypes as HierarchyPropTypes } from "../../sections/hierarchy/Hierarchy.types";
 import { PropTypes as FilesPropTypes } from "../../sections/files/Files.types";
+import { PropTypes as BudgetsPropTypes } from "../../sections/budgets/Budgets.types";
 
 export type PropTypes =
     HeroPropTypes |
@@ -35,7 +37,8 @@ export type PropTypes =
     ContentPropTypes |
     TextImagesPropTypes |
     HierarchyPropTypes |
-    FilesPropTypes;
+    FilesPropTypes |
+    BudgetsPropTypes;
 
 export const componentMap: Record<string, ComponentType<PropTypes>> = {
     hero: Hero as ComponentType<PropTypes>,
@@ -48,5 +51,6 @@ export const componentMap: Record<string, ComponentType<PropTypes>> = {
     content: Content as ComponentType<PropTypes>,
     'text-images': TextImages as ComponentType<PropTypes>,
     hierarchy: Hierarchy as ComponentType<PropTypes>,
-    files: FilesCard as ComponentType<PropTypes>
+    files: Files as ComponentType<PropTypes>,
+    budgets: Budgets as ComponentType<PropTypes>,
 };

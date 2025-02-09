@@ -7,6 +7,7 @@ import Image from "../../sections/image/Image";
 import Posts from "../../sections/posts/Posts";
 import Menu from "../../sections/menu/Menu";
 import Map from "../../sections/map/Map";
+import Content from "../../sections/content/Content";
 
 import { PropTypes as HeroPropTypes } from "../../sections/hero/Hero.types";
 import { PropTypes as ImagePropTypes } from "../../sections/image/Image.types";
@@ -15,8 +16,9 @@ import { PropTypes as CardsPropTypes } from "../../sections/cards/Cards.types";
 import { PropTypes as PostsPropTypes } from "../../sections/posts/Posts.types";
 import { PropTypes as MenuPropTypes } from "../../sections/menu/Menu.types";
 import { PropTypes as MapPropTypes } from "../../sections/map/Map.types";
+import { PropTypes as ContentPropTypes } from "../../sections/content/Content.types";
 
-export type PropTypes = HeroPropTypes | ImagePropTypes | ExpertisePropTypes | CardsPropTypes | PostsPropTypes | MenuPropTypes | MapPropTypes;
+export type PropTypes = HeroPropTypes | ImagePropTypes | ExpertisePropTypes | CardsPropTypes | PostsPropTypes | MenuPropTypes | MapPropTypes | ContentPropTypes;
 
 export const componentMap: Record<string, ComponentType<PropTypes>> = {
     hero: Hero as ComponentType<PropTypes>,
@@ -25,5 +27,6 @@ export const componentMap: Record<string, ComponentType<PropTypes>> = {
     cards: Cards as ComponentType<PropTypes>,
     posts: Posts as ComponentType<PropTypes>,
     menu: Menu as ComponentType<PropTypes>,
-    map: Map as ComponentType<PropTypes>
+    map: Map as ComponentType<PropTypes>,
+    content: Content as ComponentType<PropTypes>
 };

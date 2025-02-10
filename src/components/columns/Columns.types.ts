@@ -1,3 +1,3 @@
 export type PropTypes = {
-    attributes: any
+    attributes?: any
 };

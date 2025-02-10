@@ -2,6 +2,7 @@ import { DateType, MediaType } from "../../utils/types"
 
 export type PostTypes = {
     title: string,
+    excerpt: string,
     thumbnail: MediaType,
     date: DateType,
     link: string

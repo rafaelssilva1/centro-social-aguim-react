@@ -25,7 +25,7 @@ export const Container = styled.section`
 `;
 
 export const Heading = styled(HeadingComponent)`
-	max-width: 58.6rem;
+	max-width: 63.5rem;
 `;
 
 export const SanitizeHTMLContainer = styled(SanitizeHTMLContainerComponent)`

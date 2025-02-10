@@ -22,6 +22,8 @@ export const InnerNavigation = styled('div').withConfig({
 
     z-index: var(--index-menu);
 
+    box-shadow: 0 0 2.4rem 0 rgba(0,0,0,0.2);
+
     ${({ headerHeight }) => 
         headerHeight && css`
             top: ${`${headerHeight / 10}rem`};

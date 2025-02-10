@@ -16,6 +16,7 @@ import Gallery from "../../sections/gallery/Gallery";
 import SignUpForms from "../../sections/sign-up-forms/SignUpForms";
 import Columns from "../../components/columns/Columns";
 import ContactInformation from "../../sections/contact-information/ContactInformation";
+import Form from "../../sections/form/Form";
 
 import { PropTypes as HeroPropTypes } from "../../sections/hero/Hero.types";
 import { PropTypes as ImagePropTypes } from "../../sections/image/Image.types";
@@ -32,6 +33,8 @@ import { PropTypes as BudgetsPropTypes } from "../../sections/budgets/Budgets.ty
 import { PropTypes as GalleryPropTypes } from "../../sections/gallery/Gallery.types";
 import { PropTypes as SignUpFormsPropTypes } from "../../sections/sign-up-forms/SignUpForms.types";
 import { PropTypes as ColumnsPropTypes } from "../../components/columns/Columns.types";
+import { PropTypes as ContactInformationPropTypes } from "../../sections/contact-information/ContactInformation.types";
+import { PropTypes as FormPropTypes } from "../../sections/form/Form.types";
 
 export type BaseComponentProps = {
     block?: string
@@ -52,7 +55,9 @@ export type ComponentsPropTypes = BaseComponentProps & (
     BudgetsPropTypes |
     GalleryPropTypes |
     SignUpFormsPropTypes |
-    ColumnsPropTypes
+    ColumnsPropTypes | 
+    ContactInformationPropTypes | 
+    FormPropTypes
 )
 
 export const componentMap: Record<string, ComponentType<ComponentsPropTypes>> = {
@@ -71,5 +76,6 @@ export const componentMap: Record<string, ComponentType<ComponentsPropTypes>> = 
     gallery: Gallery as ComponentType<ComponentsPropTypes>,
     'sign-up-forms': SignUpForms as ComponentType<ComponentsPropTypes>,
     columns: Columns as ComponentType<ComponentsPropTypes>,
-    'contact-information': ContactInformation
+    'contact-information': ContactInformation as ComponentType<ComponentsPropTypes>, 
+    form: Form as ComponentType<ComponentsPropTypes>
 };

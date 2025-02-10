@@ -8,7 +8,7 @@ const SanitizeHTMLContainer: React.FC<PropTypes> = ({content, renderAsParagraph 
         <Container
             dangerouslySetInnerHTML={{__html: content}}
             as={renderAsParagraph ? 'p' : 'div'}
-            style={{columns}}
+            columns={columns}
             {...props}
         />
     );

@@ -64,11 +64,11 @@ export const SelectOptions = styled.div`
 	border: 0.1rem solid var(--color-text);
 	border-radius: var(--spacing-16);
 
-	box-shadow: 0 0 2.4rem 0 rgba(0,0,0,0.2);;
+	box-shadow: 0 0 2.4rem 0 rgba(0,0,0,0.2);
 `;
 
 export const SelectContainer = styled.div`
-	overflow: scroll;
+	overflow-y: scroll;
 
 	height: 100%;
 `;

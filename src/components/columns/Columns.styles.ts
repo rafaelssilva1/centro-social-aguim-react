@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
+import * as media from '../../theme/custom-media';
+
 export const Container = styled.div`
     display: flex;
-    flex-wrap: wrap;
     gap: var(--spacing-16);
     
-    padding: var(--spacing-32);
+    ${media.extraSmallMedia} {
+        flex-direction: column;
+    }
 `;

@@ -27,7 +27,7 @@ const FilesCard: React.FC<PropTypes> = ( { item, ...props } ) => {
 				icon={ <Download /> }
 				iconPosition={IconPosition.Left}
 			>
-				Download
+				Descarregar
 			</Link> : null}
 			{form ? <Button>
 				Inscrever

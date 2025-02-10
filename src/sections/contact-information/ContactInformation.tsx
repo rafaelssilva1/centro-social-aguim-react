@@ -11,11 +11,12 @@ import {
 	SmallText,
 } from './ContactInformation.styles';
 
-const ContactInformation: React.FC = observer(( { ...props } ) => {
-	const { options } = optionsStore;
-    const {address, phone_secretary, message_landline, phone_pavilion, phone_mobile, message_cell, email} = options;
+import { PropTypes } from './ContactInformation.types';
 
-	if ( !options ) return null;
+const ContactInformation: React.FC<PropTypes> = observer(( { attributes, ...props } ) => {
+    const {address, phone_secretary, message_landline, phone_pavilion, phone_mobile, message_cell, email} = attributes;
+
+	if ( !attributes ) return null;
 
 	return (
 		<Container {...props}>

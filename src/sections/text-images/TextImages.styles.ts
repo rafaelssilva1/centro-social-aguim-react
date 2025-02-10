@@ -36,6 +36,10 @@ export const Image = styled(ImageComponent).withConfig( {
 
 export const InnerContainer = styled.div`
 	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-16);
 `;
 
 export const MediaContainer = styled.div`

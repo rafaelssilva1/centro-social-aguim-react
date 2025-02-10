@@ -5,10 +5,9 @@ export const Container = styled.section`
 	flex-direction: column;
 	gap: var(--spacing-32);
 
-	height: 78.5rem;
 	width: 100%;
 
-	padding-block: var(--spacing-32);
+	padding: var(--spacing-32);
 
 	iframe {
 		border-radius: var(--spacing-32);

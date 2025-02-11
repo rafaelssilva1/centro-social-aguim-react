@@ -34,3 +34,9 @@ export const Link = styled( LinkComponent )`
 export const SmallText = styled( TextComponent )`
 	font-size: 1.2rem;
 `;
+
+
+export const Text = styled(TextComponent)`
+    display: flex;
+    gap: var(--spacing-4);
+`;

@@ -8,4 +8,5 @@ export default css`
 	--color-text: #000000;
 	--color-white: #ffffff;
 	--color-required: #fd1c1c;
+	--color-success: #22BB33;
 `;

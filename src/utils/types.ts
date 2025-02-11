@@ -16,3 +16,7 @@ export enum AllowedMenus {
     Footer = 'footer',
     Header = 'header'
 }
+
+export type FormData = {
+    [key: string]: string | number | boolean;
+}

@@ -10,3 +10,7 @@ export const Container = styled.div`
         flex-direction: column;
     }
 `;
+
+export const InnerContainer = styled.div`
+    flex: 1;
+`;

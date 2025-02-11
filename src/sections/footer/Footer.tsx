@@ -8,13 +8,12 @@ import Logo from "../../components/logo/Logo";
 import Image from "../../components/image/Image";
 import Facebook from "../../components/icons/Facebook";
 import Instagram from "../../components/icons/Instagram";
+import BackToTop from "../../components/back-to-top/BackToTop";
 
-import { Address, Container, InnerContainer, Link, NavContainer, SocialMedia, Text } from "./Footer.styles";
+import { Address, Container, InnerContainer, Link, NavContainer, SocialMedia, Text, ExternalLink } from "./Footer.styles";
 
 import { AllowedMenus } from "../../utils/types";
 import { TextTypes } from "../../components/text/Text.types";
-import BackToTop from "../../components/back-to-top/BackToTop";
-import ExternalLink from "../../components/external-link/ExternalLink";
 
 const Footer: React.FC = observer(() => {
     const {menus, getMenu} = menusStore;
@@ -32,15 +31,15 @@ const Footer: React.FC = observer(() => {
             <InnerContainer>
                 <Address type={TextTypes.Medium}>{options.address}</Address>
                 <span>
-                    <Text type={TextTypes.Medium}>Secretaria: {options.phone_secretary}</Text>
+                    <Text type={TextTypes.Medium}>Secretaria: <ExternalLink href={`tel:${options.phone_secretary}`}>{options.phone_secretary}</ExternalLink></Text>
                     <Text type={TextTypes.Small}>{options.message_landline}</Text>
                 </span>
                 <span>
-                    <Text type={TextTypes.Medium}>Pavilhão: {options.phone_pavilion}</Text>
+                    <Text type={TextTypes.Medium}>Pavilhão: <ExternalLink href={`tel:${options.phone_pavilion}`}>{options.phone_pavilion}</ExternalLink></Text>
                     <Text type={TextTypes.Small}>{options.message_landline}</Text>
                 </span>
                 <span>
-                    <Text type={TextTypes.Medium}>Telemóvel: {options.phone_mobile}</Text>
+                    <Text type={TextTypes.Medium}>Telemóvel: <ExternalLink href={`tel:${options.phone_mobile}`}>{options.phone_mobile}</ExternalLink></Text>
                     <Text type={TextTypes.Small}>{options.message_cell}</Text>
                 </span>
                 <Link href={`mailto:${options.email}`}>

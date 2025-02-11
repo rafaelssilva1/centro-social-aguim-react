@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import LinkComponent from "../../components/link/Link";
 import TextComponent from "../../components/text/Text";
+import ExternalLinkComponent from "../../components/external-link/ExternalLink";
 
 import * as media from '../../theme/custom-media';
+import typography from "../../theme/typography.styles";
 
 export const Container = styled.footer`
     display: flex;
@@ -46,6 +48,9 @@ export const SocialMedia = styled(TextComponent)`
 
 export const Text = styled(TextComponent)`
     color: var(--color-white);
+
+    display: flex;
+    gap: var(--spacing-4);
 `;
 
 export const Link = styled(LinkComponent)`
@@ -61,4 +66,9 @@ export const Address = styled(TextComponent)`
     margin-bottom: var(--spacing-32);
 
     max-width: 30rem;
+`;
+
+export const ExternalLink = styled(ExternalLinkComponent)`
+    ${typography.p.medium}
+    color: var(--color-white);
 `;

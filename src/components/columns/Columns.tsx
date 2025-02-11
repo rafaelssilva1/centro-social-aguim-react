@@ -1,6 +1,6 @@
 import { componentMap, ComponentsPropTypes } from "../../pages/Page/blocks";
 
-import { Container } from "./Columns.styles";
+import { Container, InnerContainer } from "./Columns.styles";
 
 import { PropTypes } from "./Columns.types";
 
@@ -9,11 +9,18 @@ const Columns: React.FC<PropTypes> = ({attributes, ...props}) => {
 
     return (
         <Container {...props}>
-            {attributes.map((block: ComponentsPropTypes[], index: number) => {
-                const content = block[0];
-                const Component = content?.block ? componentMap[content.block] : null;
-
-                return Component ? <Component key={index} attributes={content.attributes} /> : null;
+            {attributes.map((column: ComponentsPropTypes[], index: number) => {
+                return (
+                    <InnerContainer key={index}>
+                        {
+                            column.map((block, j) => {
+                                const Component = block?.block ? componentMap[block.block] : null;
+            
+                                return Component ? <Component key={j} attributes={block.attributes} /> : null;
+                            })
+                        }
+                    </InnerContainer>
+                )
             })}
         </Container>
     )

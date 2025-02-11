@@ -1,6 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled('div').withConfig( {
+	shouldForwardProp: ( prop ) => ! [ 'ignoreOverlay' ].includes( prop ),
+} )<{ignoreOverlay?: boolean}>`
     position: absolute;
     inset: 0;
 
@@ -11,4 +13,10 @@ export const Container = styled.div`
     background-color: var(--color-white);
 
     z-index: var(--index-modal);
+
+    ${ ( { ignoreOverlay } ) =>
+		ignoreOverlay &&
+		css`
+			position: unset;
+		` }
 `;

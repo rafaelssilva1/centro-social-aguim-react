@@ -9,9 +9,9 @@ export const InputSpan = styled('span').withConfig( {
 	color: var( --color-text );
 
 	${ ( { columns } ) =>
-		columns && columns !== '1' &&
+		columns &&
 		css`
-			width: calc( ${ Number(columns) * 100 }% - var( --spacing-16 ) );
+			width: calc(${Number(columns)}% - var(--spacing-16));
 
 			${media.extraSmallMedia} {
 				width: 100%;
@@ -22,7 +22,7 @@ export const InputSpan = styled('span').withConfig( {
 export const InputLabel = styled( 'label' ).withConfig( {
 	shouldForwardProp: ( prop ) => ! [ 'columns' ].includes( prop ),
 } )<{columns?: string}>`
-	width: 100%;
+	width: calc(100% - var(--spacing-16));
 
 	display: flex;
 	flex-direction: column;
@@ -31,9 +31,9 @@ export const InputLabel = styled( 'label' ).withConfig( {
 	${typography.p.medium}
 
 	${ ( { columns } ) =>
-		columns && columns !== '1' &&
+		columns &&
 		css`
-			width: calc( ${ Number(columns) * 100 }% - var( --spacing-16 ) );
+			width: calc(${Number(columns)}% - var(--spacing-16));
 
 			${media.extraSmallMedia} {
 				width: 100%;

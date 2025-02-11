@@ -1,7 +1,6 @@
 import { observer } from 'mobx-react';
-import { optionsStore } from '../../state/stores/options';
 
-import Text from '../../components/text/Text';
+import ExternalLink from '../../components/external-link/ExternalLink';
 
 import {
 	Address,
@@ -9,6 +8,7 @@ import {
 	InnerContainer,
 	Link,
 	SmallText,
+	Text
 } from './ContactInformation.styles';
 
 import { PropTypes } from './ContactInformation.types';
@@ -22,15 +22,15 @@ const ContactInformation: React.FC<PropTypes> = observer(( { attributes, ...prop
 		<Container {...props}>
 			<Address>{ address }</Address>
 			<InnerContainer>
-				<Text>{ `Secretaria: ${ phone_secretary }` }</Text>
+				<Text>Secretaria: <ExternalLink href={`tel:${phone_secretary}`}>{phone_secretary}</ExternalLink></Text>
 				<SmallText>{ message_landline }</SmallText>
 			</InnerContainer>
 			<InnerContainer>
-				<Text>{ `Pavilhão: ${ phone_pavilion }` }</Text>
+				<Text>Pavilhão: <ExternalLink href={`tel:${phone_pavilion}`}>{phone_pavilion}</ExternalLink></Text>
 				<SmallText>{ message_landline }</SmallText>
 			</InnerContainer>
 			<InnerContainer>
-				<Text>{ `Telemóvel: ${ phone_mobile }` }</Text>
+				<Text >Telemóvel: <ExternalLink href={`tel:${phone_mobile}`}>{phone_mobile}</ExternalLink></Text>
 				<SmallText>{ message_cell }</SmallText>
 			</InnerContainer>
 			<Link href={ `mailto:${ email }` }>

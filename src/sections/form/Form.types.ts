@@ -19,7 +19,3 @@ export type PropTypes = {
         data: FormFieldType[]
     }
 }
-
-export type FormData = {
-    [key: string]: string | number | boolean;
-}

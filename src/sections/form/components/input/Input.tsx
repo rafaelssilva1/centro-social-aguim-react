@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import Required from '../required/Required';
 import Error from '../error/Error';
 
@@ -14,11 +16,25 @@ const Input: React.FC<PropTypes> = ( {
 	registerCallback,
 	...props
 } ) => {	
+	const parsedColumns = useMemo(() => {
+		switch(columns) {
+			case '0.5':
+			  return '50';
+			case '0.33':
+			  return '33.33';
+			case '0.66':
+			  return '66.66';
+			default:
+			  return '100';
+		}
+	}, [])
 
 	if ( type === 'textarea' ) {
 		return (
 			<InputLabel>
-				<InputSpan columns={ columns }>
+				<InputSpan
+					columns={ parsedColumns }
+				>
 					{ fieldName }
 					<Required required={ isRequired } />
 				</InputSpan>
@@ -34,7 +50,9 @@ const Input: React.FC<PropTypes> = ( {
 	}
 
 	return (
-		<InputLabel columns={ columns }>
+		<InputLabel
+			columns={ parsedColumns }
+		>
 			<InputSpan>
 				{ fieldName }
 				<Required required={ isRequired } />

@@ -13,6 +13,7 @@
     "@emotion/babel-plugin": "^11.13.5",
     "@emotion/css": "^11.13.5",
     "@emotion/react": "^11.14.0",
+    "@google-recaptcha/react": "^1.2.3",
     "axios": "^1.7.9",
     "emotion-normalize": "^11.0.1",
     "mobx": "^6.13.6",

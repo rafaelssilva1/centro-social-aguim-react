@@ -1,5 +1,6 @@
 import { FileType } from "../../Files.types"
 
 export type PropTypes = {
-    item: FileType
+    item: FileType,
+    callback?: () => void,
 }

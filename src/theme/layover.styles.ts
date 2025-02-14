@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 
 export default css`
+	--index-loading: 900;
 	--index-modal: 700;
 	--index-backdrop: 200;
 	--index-menu: 100;

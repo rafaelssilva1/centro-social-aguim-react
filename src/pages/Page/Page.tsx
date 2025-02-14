@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-
-import { pagesStore } from "../../state/stores/pages";
 import { observer } from "mobx-react";
 
+import { pagesStore } from "../../state/stores/pages";
+
 import Loading from "../../components/loading/Loading";
+import NotFound from "../NotFound/NotFound";
+
 import { componentMap } from "./blocks";
 import { PropTypes } from "./Page.types";
 
@@ -13,7 +15,7 @@ const Page: React.FC<PropTypes> = observer(({id}) => {
 
     const idToUse = id ?? paramId;
 
-    const {pages, getPage} = pagesStore;
+    const {pages, loading, getPage} = pagesStore;
 
     const parsedId = Number(idToUse?.split('-').at(-1));
 
@@ -21,11 +23,13 @@ const Page: React.FC<PropTypes> = observer(({id}) => {
         getPage(parsedId);
     }, [parsedId]);
 
-    const currentPage = pages.find(page => page.id === parsedId);
+    const currentPage = pages.find(page => page.id === parsedId);    
 
     const contentToShow = currentPage?.data;
 
-    if(!currentPage) return <Loading />;
+    if(loading) return <Loading />;
+
+    if(!currentPage) return <NotFound />;
 
     return (
         <>

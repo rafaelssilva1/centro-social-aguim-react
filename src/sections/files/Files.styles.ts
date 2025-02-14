@@ -12,5 +12,6 @@ export const Container = styled.section`
 
 export const InnerContainer = styled.div`
 	display: flex;
+	flex-wrap: wrap;
 	gap: var(--spacing-16);
 `;

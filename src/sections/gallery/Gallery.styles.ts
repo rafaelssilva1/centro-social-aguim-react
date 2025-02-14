@@ -22,4 +22,7 @@ export const Image = styled( ImageComponent )`
 	&:nth-of-type( 3n ) {
 		grid-row: span 2;
 	}
+	&:nth-of-type( 9n ) {
+		grid-row: span 1;
+	}
 `;

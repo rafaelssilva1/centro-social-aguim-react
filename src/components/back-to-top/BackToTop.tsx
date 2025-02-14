@@ -1,14 +1,11 @@
+import scrollToTop from "../../utils/scroll-to-top";
 import ArrowTop from "../icons/ArrowTop";
 
 import { Button } from "./BackToTop.styles";
 
 const BackToTop: React.FC = () => {
-    const handleBackToTop = () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-
     return (
-        <Button onClick={handleBackToTop}>
+        <Button onClick={() => scrollToTop({smooth: true})}>
             <ArrowTop />
         </Button>
     )

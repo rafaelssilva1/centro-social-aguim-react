@@ -6,24 +6,37 @@ import { PageModel } from "../models/pages";
 const PagesStore = t
     .model('PagesStore', {
         homepageId: t.string,
+        loading: t.boolean,
         pages: t.array(PageModel),
     })
     .actions(self => ({
         getPage: flow(function* (id: number) {
+            self.loading = true;
+
             try {
                 const isRepeated = self.pages.find(el => el.id === id);
 
-                if (isRepeated) return;
+                if (isRepeated) {
+                    self.loading = false;
+                    return;
+                };
 
                 const { data } = yield axios.get(
                     `${import.meta.env.VITE_REQUEST_URL}/content/${id}`
                 );
+
+                if(data.status === 404) {
+                    self.loading = false;
+                    return;
+                };
 
                 self.pages.push(PageModel.create(data));
             } catch (e) {
                 if (typeof e === "string") {
                     console.error(e.toUpperCase());
                 }
+            } finally {
+                self.loading = false;
             };
         }),
         getHomePage: flow(function* () {
@@ -45,4 +58,4 @@ const PagesStore = t
         }),
     }))
 
-export const pagesStore = PagesStore.create({pages: [], homepageId: ''})
+export const pagesStore = PagesStore.create({pages: [], loading: false, homepageId: ''})

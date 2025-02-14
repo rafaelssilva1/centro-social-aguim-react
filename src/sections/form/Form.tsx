@@ -30,7 +30,6 @@ const Form: React.FC<PropTypes> = ({ attributes, ...props }) => {
             if (!executeV3) {
               return;
             }
-        
             const token = await executeV3('formsubmit');
 
             return token;
@@ -51,19 +50,10 @@ const Form: React.FC<PropTypes> = ({ attributes, ...props }) => {
                 {attributes.data.map((input, index) => {
                     const {name, type: {id: type}, columns: {value: columns}, required, min, max} = input;
 
-                    const parsedName = name
-                        .normalize("NFD")
-                        .replace(/[\u0300-\u036f]/g, "")
-                        .replace(/º/g, "o")
-                        .replace(/ª/g, "a")
-                        .replace(/[`´‘’]/g, "'")
-                        .replace(/[^a-zA-Z0-9']/g, "-")
-                        .replace(/-+/g, "-")
-                        .toLowerCase();
-
                     return (
                         <Input
                             fieldName={name}
+                            valueName={name}
                             type={type}
                             columns={columns}
                             isRequired={required}

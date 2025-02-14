@@ -1,9 +1,8 @@
 import { Container } from "./Loading.styles";
-import { PropTypes } from "./Loading.types";
 
-const Loading: React.FC<PropTypes> = ({ignoreOverlay, ...props}) => {
+const Loading: React.FC = ({...props}) => {
     return (
-        <Container ignoreOverlay {...props}>
+        <Container {...props}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="80" height="80" xmlnsXlink="http://www.w3.org/1999/xlink">
                 <g>
                     <g transform="rotate(0 50 50)">

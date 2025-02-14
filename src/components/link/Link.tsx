@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 import Chrevon from '../icons/Chrevon';
 
+import scrollToTop from '../../utils/scroll-to-top';
+
 import { BaseLink } from './Link.styles';
 
 import { IconPosition, PropTypes } from './Link.types';
@@ -19,7 +21,7 @@ const Link: React.FC<PropTypes> = ({
 	const { pathname } = useLocation();
 
 	useLayoutEffect(() => {
-		window.scrollTo(0, 0);
+		scrollToTop({smooth: false});
 	}, [pathname]);
 
 	return (

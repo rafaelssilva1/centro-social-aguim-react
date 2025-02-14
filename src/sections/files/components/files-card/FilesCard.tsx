@@ -8,7 +8,7 @@ import { Button, Container, Image, Link } from './FilesCard.styles';
 
 import { PropTypes } from './FilesCard.types';
 
-const FilesCard: React.FC<PropTypes> = ( { item, ...props } ) => {
+const FilesCard: React.FC<PropTypes> = ( { item, callback, ...props } ) => {
 	const { title, description, preview, file, form } = item;
 
 	return (
@@ -29,7 +29,7 @@ const FilesCard: React.FC<PropTypes> = ( { item, ...props } ) => {
 			>
 				Descarregar
 			</Link> : null}
-			{form ? <Button>
+			{form ? <Button onClick={callback}>
 				Inscrever
 			</Button> : null}
 		</Container>

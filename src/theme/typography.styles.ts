@@ -33,7 +33,7 @@ const typography = {
   `,
   h3: css`
     ${sharedStyles}
-    font-size: 2rem;
+    font-size: 2.8rem;
   `,
   h4: css`
     ${sharedStyles}

@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/xml; charset=utf-8");
 
-$apiUrl = getenv('API_URL');
+$apiUrl = getenv('SITEMAP_API_URL');
 
 $response = file_get_contents($apiUrl);
 if ($response === FALSE) {

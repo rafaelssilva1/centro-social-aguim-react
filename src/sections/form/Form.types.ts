@@ -11,7 +11,8 @@ export type FormFieldType = {
     },
     validationRule?: string | null,
     min: string | number | null,
-    max: string | number | null
+    max: string | number | null,
+    options?: string[]
 }
 
 export type PropTypes = {

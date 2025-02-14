@@ -18,5 +18,6 @@ export enum AllowedMenus {
 }
 
 export type FormData = {
-    [key: string]: string | number | boolean;
+    documentos?: { [key: string]: File[] }; 
+    [key: string]: string | number | boolean | { [x: string]: string } | { [key: string]: File[] } | undefined;
 }

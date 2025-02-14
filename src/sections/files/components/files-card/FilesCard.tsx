@@ -29,7 +29,10 @@ const FilesCard: React.FC<PropTypes> = ( { item, callback, ...props } ) => {
 			>
 				Descarregar
 			</Link> : null}
-			{form ? <Button onClick={callback}>
+			{form ? <Button onClick={() => {
+				callback?.();
+				window.scroll(0, 0);
+			}}>
 				Inscrever
 			</Button> : null}
 		</Container>

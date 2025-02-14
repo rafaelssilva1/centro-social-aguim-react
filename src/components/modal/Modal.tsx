@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import useWindowSize from "../../hooks/useWindowSize";
+
 import scrollToTop from "../../utils/scroll-to-top";
 
 import Close from "../icons/Close";
@@ -10,11 +12,11 @@ import { PropTypes } from "./Modal.types";
 import { RemoveScroll } from "react-remove-scroll";
 
 const Modal: React.FC<PropTypes> = ({ children, isOpen, callback, title, ...props }) => {
-    if (!isOpen) return null;
+    const { belowMobile } = useWindowSize();
 
     useEffect(() => {
         isOpen && scrollToTop({ smooth: false });
-    }, [isOpen])
+    }, [isOpen]);
 
     useEffect(() => {
         document.addEventListener('keydown', (e) => {
@@ -26,19 +28,29 @@ const Modal: React.FC<PropTypes> = ({ children, isOpen, callback, title, ...prop
                 if (e.key === 'Escape') callback(false);
             })
         }
-    }, [])
+    }, []);
+
+    if (!isOpen) return null;
 
     return (
         createPortal(
-            <RemoveScroll forwardProps>
-                <Container open={isOpen} {...props}>
+            belowMobile ?
+                <Container {...props}>
                     <CloseWrapper onClick={() => callback(false)}>
                         <Close />
                     </CloseWrapper>
                     {title ? <Heading level="2">{title}</Heading> : null}
                     {children}
-                </Container>
-            </RemoveScroll>,
+                </Container> :
+                <RemoveScroll forwardProps>
+                    <Container {...props}>
+                        <CloseWrapper onClick={() => callback(false)}>
+                            <Close />
+                        </CloseWrapper>
+                        {title ? <Heading level="2">{title}</Heading> : null}
+                        {children}
+                    </Container>
+                </RemoveScroll>,
             document.body
         )
     )

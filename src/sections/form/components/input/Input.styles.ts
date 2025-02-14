@@ -54,6 +54,13 @@ export const StyledInput = styled('input').withConfig({
 		css`
 			border-color: var(--color-required);
 	` }
+
+	&[type=date] {
+		appearance: none;
+		background-color: var(--color-white);
+		padding: var( --spacing-12 ) var( --spacing-32 );
+		min-height: 4.2rem;
+	}
 `;
 
 export const TextArea = styled('textarea').withConfig({

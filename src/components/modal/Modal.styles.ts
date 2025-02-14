@@ -1,15 +1,19 @@
 import styled from "styled-components";
 import HeadingComponent from "../heading/Heading";
 
-export const Container = styled.dialog`
+export const Container = styled.div`
     width: calc(100% + 1.5rem);
-    height: 100%;
+    height: 102%;
 
     border: none;
 
     padding: 0;
 
     overflow-y: scroll;
+
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-white);
 `;
 
 export const CloseWrapper = styled.span`

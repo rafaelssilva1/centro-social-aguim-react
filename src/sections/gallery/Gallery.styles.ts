@@ -36,7 +36,7 @@ export const Image = styled( ImageComponent )`
 	}
 
 	${media.extraSmallMedia} {
-		max-height: 18rem;
+		max-height: 16rem;
 		border-radius: var(--spacing-8);
 
 		&:nth-of-type(n+5) {

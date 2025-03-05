@@ -42,6 +42,10 @@ const Footer: React.FC = observer(() => {
                     <Text type={TextTypes.Medium}>Telemóvel: <ExternalLink href={`tel:${options.phone_mobile}`}>{options.phone_mobile}</ExternalLink></Text>
                     <Text type={TextTypes.Small}>{options.message_cell}</Text>
                 </span>
+                <span>
+                    <Text type={TextTypes.Medium}>Telemóvel Creche/Pré-escolar: <ExternalLink href={`tel:${options.phone_daycare}`}>{options.phone_daycare}</ExternalLink></Text>
+                    <Text type={TextTypes.Small}>{options.message_cell}</Text>
+                </span>
                 <Link href={`mailto:${options.email}`}>
                     <Text type={TextTypes.Medium}>{options.email}</Text>
                 </Link>

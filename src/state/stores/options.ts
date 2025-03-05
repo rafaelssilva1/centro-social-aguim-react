@@ -29,6 +29,7 @@ export const optionsStore = OptionsStore.create({
         phone_pavilion: '',
         message_landline: '',
         phone_mobile: '',
+        phone_daycare: '',
         message_cell: '',
         email: '',
         facebook: '',

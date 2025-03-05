@@ -6,6 +6,7 @@ export const OptionsModel = t.model({
     phone_pavilion: t.string,
     message_landline: t.string,
     phone_mobile: t.string,
+    phone_daycare: t.string,
     message_cell: t.string,
     email: t.string,
     facebook: t.string,

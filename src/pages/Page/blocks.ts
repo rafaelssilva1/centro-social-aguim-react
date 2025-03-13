@@ -17,6 +17,7 @@ import SignUpForms from "../../sections/sign-up-forms/SignUpForms";
 import Columns from "../../components/columns/Columns";
 import ContactInformation from "../../sections/contact-information/ContactInformation";
 import Form from "../../sections/form/Form";
+import FacebookFeed from "../../sections/facebook-feed/FacebookFeed";
 
 import { PropTypes as HeroPropTypes } from "../../sections/hero/Hero.types";
 import { PropTypes as ImagePropTypes } from "../../sections/image/Image.types";
@@ -35,6 +36,7 @@ import { PropTypes as SignUpFormsPropTypes } from "../../sections/sign-up-forms/
 import { PropTypes as ColumnsPropTypes } from "../../components/columns/Columns.types";
 import { PropTypes as ContactInformationPropTypes } from "../../sections/contact-information/ContactInformation.types";
 import { PropTypes as FormPropTypes } from "../../sections/form/Form.types";
+import { PropTypes as FacebookFeedPropTypes } from "../../sections/facebook-feed/FacebookFeed.types";
 
 export type BaseComponentProps = {
     block?: string
@@ -57,7 +59,8 @@ export type ComponentsPropTypes = BaseComponentProps & (
     SignUpFormsPropTypes |
     ColumnsPropTypes | 
     ContactInformationPropTypes | 
-    FormPropTypes
+    FormPropTypes | 
+    FacebookFeedPropTypes
 )
 
 export const componentMap: Record<string, ComponentType<ComponentsPropTypes>> = {
@@ -77,5 +80,6 @@ export const componentMap: Record<string, ComponentType<ComponentsPropTypes>> = 
     'sign-up-forms': SignUpForms as ComponentType<ComponentsPropTypes>,
     columns: Columns as ComponentType<ComponentsPropTypes>,
     'contact-information': ContactInformation as ComponentType<ComponentsPropTypes>, 
-    form: Form as ComponentType<ComponentsPropTypes>
+    form: Form as ComponentType<ComponentsPropTypes>,
+    'facebook-feed': FacebookFeed as ComponentType<ComponentsPropTypes>
 };

@@ -1,5 +1,3 @@
-import {Swiper, SwiperSlide} from 'swiper/react';
-
 import Card from './components/card/Card';
 
 import { Heading } from '../hero/Hero.styles';
@@ -16,21 +14,13 @@ const Cards: React.FC<PropTypes> = ( { attributes, ...props } ) => {
 		<Container {...props}>
 			<Heading level="2">{ title }</Heading>
 			<ServicesContainer>
-                <Swiper
-                    slidesPerView={'auto'}
-                    spaceBetween={16}
-                    loop
-                >
-                    { data.map( ( item, index ) => {
-                        const {title, description, media, link} = item;
-                            
-                        return (
-                            <SwiperSlide key={index} style={{maxWidth: '30rem'}}>
-                                <Card title={title} description={description} media={media} link={link} />
-                            </SwiperSlide>
-                        )
-                    })}
-                </Swiper>
+                { data.map( ( item, index ) => {
+                    const {title, description, media, link} = item;
+                        
+                    return (
+                        <Card key={index} title={title} description={description} media={media} link={link} />
+                    )
+                })}
 			</ServicesContainer>
 		</Container>
 	);

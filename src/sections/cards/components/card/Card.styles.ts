@@ -13,6 +13,8 @@ export const Container = styled(Link)`
 	flex-shrink: 0;
 
 	text-transform: unset;
+
+	max-width: 30rem;
 `;
 
 export const InnerContainer = styled.div`

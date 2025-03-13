@@ -7,8 +7,3 @@ export const Container = styled.section`
 
     padding: var(--spacing-32);
 `;
-
-export const ServicesContainer = styled.div`
-	display: flex;
-	gap: var(--spacing-16);
-`;

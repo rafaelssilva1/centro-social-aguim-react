@@ -12,7 +12,7 @@ const Posts: React.FC<PropTypes> = ({ attributes, ...props }) => {
         <Container {...props}>
             <Heading level="2">{title}</Heading>
             <PostsContainer>
-                {posts.map((post, index) => {
+                {posts.slice(0,3).map((post, index) => {
                     const {title, excerpt, thumbnail, date, link} = post;
                     
                     return (
@@ -29,7 +29,7 @@ const Posts: React.FC<PropTypes> = ({ attributes, ...props }) => {
                 })}
             </PostsContainer>
             <AssembliesContainer>
-                {assemblies.map((assembly, index) => {
+                {assemblies.slice(0,3).map((assembly, index) => {
                     const {title, excerpt, date, link} = assembly;
 
                     return (

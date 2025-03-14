@@ -7,6 +7,7 @@ export type PropTypes = {
             width: number,
             height: number
         },
-        imageFit: 'cover' | 'contain'
+        imageFit: 'cover' | 'contain',
+        imageHeight: string
     }
 }

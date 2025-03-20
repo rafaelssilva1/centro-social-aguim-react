@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from 'swiper';
 import { Navigation } from "swiper/modules";
+import { Zoom } from 'swiper/modules';
 
 import Heading from "../../components/heading/Heading";
 import Text from "../../components/text/Text";
@@ -13,6 +14,8 @@ import { Container, InnerContainer, MediaContainer, Image, ArrowContainer, Arrow
 import 'swiper/css';
 // @ts-expect-error ignore error
 import 'swiper/css/navigation';
+// @ts-expect-error ignore error
+import 'swiper/css/zoom';
 
 import { PropTypes } from "./Menu.types";
 import { IconPosition } from "../../components/link/Link.types";
@@ -33,18 +36,21 @@ const Menu: React.FC<PropTypes> = ({attributes, ...props}) => {
                         slidesPerView={'auto'}
                         centeredSlides
                         pagination={{ clickable: true }}
-                        modules={[Navigation]}
+                        modules={[Navigation, Zoom]}
                         onActiveIndexChange={(slide) => setCurrentSlide(slide.activeIndex)}
                         onBeforeInit={(swiper) => {
                             swiperRef.current = swiper;
                         }}
+                        zoom
                     >
                         { media.map( ( img, index ) => {
                             const {url, alt, height, width} = img;
 
                             return (
                                 <SwiperSlide key={index} style={{maxWidth: '105.2rem'}}>
-                                    <Image src={url} alt={alt} height={height} width={width} />
+                                    <div className="swiper-zoom-container">
+                                        <Image src={url} alt={alt} height={height} width={width} />
+                                    </div>
                                 </SwiperSlide>
                             )
                         } ) }

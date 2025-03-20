@@ -10,7 +10,6 @@ export const Container = styled.section`
 	gap: var(--spacing-32);
 
 	padding: var(--spacing-32);
-	padding: var(--spacing-60);
 `;
 
 export const InnerContainer = styled.div`
@@ -32,9 +31,9 @@ export const ArrowContainer = styled.div`
 	transform: translateX( -50% );
 `;
 
-export const Arrow = styled(ArrowNav).withConfig( {
-	shouldForwardProp: ( prop ) => ! [ 'rotate' ].includes( prop ),
-} )<{rotate?: boolean}>`
+export const Arrow = styled(ArrowNav).withConfig({
+	shouldForwardProp: (prop) => !['rotate'].includes(prop),
+}) <{ rotate?: boolean }>`
 	position: absolute;
 	left: calc( 50% + 4rem );
 	top: 50%;
@@ -42,7 +41,7 @@ export const Arrow = styled(ArrowNav).withConfig( {
 
 	cursor: pointer;
 
-	${ ( { rotate } ) =>
+	${({ rotate }) =>
 		rotate &&
 		css`
 			left: calc( 50% - 12rem );

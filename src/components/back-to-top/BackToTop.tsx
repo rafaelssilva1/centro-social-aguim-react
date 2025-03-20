@@ -5,7 +5,7 @@ import { Button } from "./BackToTop.styles";
 
 const BackToTop: React.FC = () => {
     return (
-        <Button onClick={() => scrollToTop({smooth: true})}>
+        <Button onClick={() => scrollToTop({smooth: true})} aria-label="Voltar ao topo do site">
             <ArrowTop />
         </Button>
     )

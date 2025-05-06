@@ -14,6 +14,8 @@ export const Container = styled.div`
     position: absolute;
     inset: 0;
     background-color: var(--color-white);
+
+    z-index: var(--index-modal);
 `;
 
 export const CloseWrapper = styled.span`

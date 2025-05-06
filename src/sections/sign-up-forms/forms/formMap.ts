@@ -5,6 +5,7 @@ import { schema as daycare} from "../../../schemas/daycare";
 import { schema as kindergarten} from "../../../schemas/kindergarten";
 import { schema as erpi} from "../../../schemas/erpi";
 import { schema as homeCareService} from "../../../schemas/home-care-service";
+import { schema as gymSchema} from "../../../schemas/gym";
 
 type FormMapFieldType = {
     name: string,
@@ -33,5 +34,6 @@ export const formMap: FormMapType = {
     daycare,
     kindergarten,
     erpi,
-    'home-care-service': homeCareService
+    'home-care-service': homeCareService,
+    gym: gymSchema
 }
